@@ -15,7 +15,7 @@ while true; do
 	else
 		ITER=$(expr $ITER + 1)
 		echo "We do not yet have a working network connection to Red Hat. Try: $ITER"
-	fi
+	fiC
 	if [ "$ITER" -eq 10 ]; then
       		echo "Error: we are experiencing some network error to Red Hat."
 		exit 1
@@ -63,7 +63,8 @@ subscription-manager repos \
     --enable="rhel-7-server-rpms" \
     --enable="rhel-7-server-extras-rpms" \
     --enable="rhel-7-fast-datapath-rpms" \
-    --enable="rhel-7-server-ose-3.7-rpms"
+    --enable="rhel-7-server-ose-3.9-rpms" \ 
+    --enable="rhel-7-server-ansible-2.4-rpms"
 
 # Install base packages and update system to latest packages
 echo $(date) " - Install base packages and update system to latest packages"
