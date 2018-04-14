@@ -71,7 +71,7 @@ echo "Configuring SSH ControlPath to use shorter path name"
 sed -i -e "s/^# control_path = %(directory)s\/%%h-%%r/control_path = %(directory)s\/%%h-%%r/" /etc/ansible/ansible.cfg
 sed -i -e "s/^#host_key_checking = False/host_key_checking = False/" /etc/ansible/ansible.cfg
 sed -i -e "s/^#pty=False/pty=False/" /etc/ansible/ansible.cfg
-
+echo "deprecation_warnings=False" >> /etc/ansible/ansible.cfg
 # Create Ansible Playbook for Post Installation task
 echo $(date) " - Create Ansible Playbook for Post Installation task"
 
